@@ -6,6 +6,11 @@ return [
     //Класс пользователя
     'identity'=>\Model\User::class,
     'routeMiddleware' => [
-        'auth' => \Middlewares\AuthMiddleware::class
+        'auth' => \Middlewares\AuthMiddleware::class,
+        'trim' => \Middlewares\TrimMiddleware::class
+    ],
+    'validators' => [
+        'required' => \Validators\RequireValidator::class,
+        'unique' => \Validators\UniqueValidator::class
     ]
 ];
