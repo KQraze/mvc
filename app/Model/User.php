@@ -11,7 +11,7 @@ class User extends Model implements IdentityInterface
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['name', 'login', 'password'];
+    protected $fillable = ['name', 'login', 'password', 'role_id'];
     protected static function booted()
     {
         static::created(function ($user) {
@@ -34,5 +34,15 @@ class User extends Model implements IdentityInterface
     public function attemptIdentity(array $credentials)
     {
         return self::where(['login' => $credentials['login'], 'password' => md5($credentials['password'])])->first();
+    }
+
+    public function getRoleId(): int
+    {
+        return $this->role_id;
+    }
+
+    public function employees()
+    {
+        return self::where('role_id', 2);
     }
 }

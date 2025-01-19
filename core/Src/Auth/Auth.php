@@ -42,6 +42,21 @@ class Auth
         return self::$user->findIdentity($id);
     }
 
+    public static function getRoleId(): int
+    {
+        return self::$user->getRoleId();
+    }
+
+    public static function isAdmin(): bool
+    {
+        return self::getRoleId() === 1;
+    }
+
+    public static function isEmployee(): bool
+    {
+        return self::getRoleId() === 2;
+    }
+
     //Проверка является ли текущий пользователь аутентифицированным
     public static function check(): bool
     {
@@ -56,6 +71,13 @@ class Auth
     {
         Session::clear('id');
         return true;
+    }
+
+    public static function generateCSRF(): string
+    {
+        $token = md5(time());
+        Session::set('csrf_token', $token);
+        return $token;
     }
 
 }

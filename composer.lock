@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1da7ad711ef9caf85521694193d4c717",
+    "content-hash": "b3defb0919ee382374e157511c1722f0",
     "packages": [
         {
             "name": "brick/math",
@@ -771,6 +771,49 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2024-12-10T14:47:55+00:00"
+        },
+        {
+            "name": "kqraze/library",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KQraze/library.git",
+                "reference": "b1999aef019221079da5f3c055b72e0859caa3ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KQraze/library/zipball/b1999aef019221079da5f3c055b72e0859caa3ac",
+                "reference": "b1999aef019221079da5f3c055b72e0859caa3ac",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 | ^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collect\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KQraze",
+                    "email": "pavel.eliseev061@gmail.com"
+                }
+            ],
+            "description": "Module for working with arrays ",
+            "support": {
+                "source": "https://github.com/KQraze/library/tree/main",
+                "issues": "https://github.com/KQraze/library/issues"
+            },
+            "time": "2025-01-16T16:25:18+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -1583,6 +1626,7 @@
     "stability-flags": {
         "illuminate/database": 20,
         "illuminate/events": 20,
+        "kqraze/library": 20,
         "nikic/fast-route": 20
     },
     "prefer-stable": false,
@@ -1590,6 +1634,6 @@
     "platform": {
         "php": "^7.4 | ^8.0"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
